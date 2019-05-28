@@ -27,16 +27,13 @@ echo"問題３";
 echo"<br>";
 
 for($i=1;$i<=100;$i++){
-    if ($i%3==0&&$i%5!=0) {
-        echo "Fizz ";
-    }
-    elseif ($i%3!=0&&$i%5==0) {
-        echo "Buzz ";
-    }
-    elseif ($i%3==0&&$i%5==0) {
+    if ($i%3==0&&$i%5==0) {
         echo "FizzBuzz ";
-    }
-    else{
+    } elseif ($i%3==0) {
+        echo "Fizz ";
+    } elseif ($i%5==0) {
+        echo "Buzz ";
+    } else {
         echo "$i ";
     }
 }    
@@ -63,8 +60,15 @@ echo"問題５";
 echo"<br>";
 
 $alpha = ['E', 'A', 'D', 'B', 'A', 'C', 'A', 'B', 'E', 'E', 'A', 'A', 'C'];
+$number=0;
 
-print_r(array_count_values($alpha));
+for($i=0;$i<=12;$i++){
+    if ($alpha[$i]=='A') {
+        $number++;
+    }
+}
+
+echo "'A'という文字の数は{$number}個です";
 
 
 // 問題6
@@ -118,10 +122,8 @@ for($n=1;$n<=100;$n++){
 
     }
     if($num==2){
-        echo $n;
+        echo $n.'<br>';
     }
-    elseif ($num==0) {
-        echo $n;
-    }
+    $num = 0;
 }
 
